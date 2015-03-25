@@ -7,6 +7,7 @@ class JotsController < ApplicationController
   end
   def create
     jot = Jot.create(jot_params)
+    JotMailer.new_jot(jot).deliver_later
     redirect_to jots_path
   end
   private
