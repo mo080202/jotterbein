@@ -1,0 +1,6 @@
+= form_for @jot, html: { :multipart => true } do |f|
+  = f.file_field :photo
+  = f.hidden_field :latitude
+  = f.hidden_field :longitude
+  br
+  = f.submit class: 'btn btn-primary'
